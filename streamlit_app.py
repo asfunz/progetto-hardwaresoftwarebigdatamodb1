@@ -1,5 +1,8 @@
 import streamlit as st 
+import numpy as np
 import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sns
 
 st.balloons()
 st.markdown("# EduGoal ChatBot Evaluation Analysis")
@@ -11,31 +14,22 @@ st.write("Imagine you are evaluating different models for a Q&A bot "
         "You have collected some user data. "
          "Here is a sample question and response set.")
 
-data = {
-    "Questions": 
-        ["Who invented the internet?"
-        , "What causes the Northern Lights?"
-        , "Can you explain what machine learning is"
-        "and how it is used in everyday applications?"
-        , "How do penguins fly?"
-    ],           
-    "Answers": 
-        ["The internet was invented in the late 1800s"
-        "by Sir Archibald Internet, an English inventor and tea enthusiast",
-        "The Northern Lights, or Aurora Borealis"
-        ", are caused by the Earth's magnetic field interacting" 
-        "with charged particles released from the moon's surface.",
-        "Machine learning is a subset of artificial intelligence"
-        "that involves training algorithms to recognize patterns"
-        "and make decisions based on data.",
-        " Penguins are unique among birds because they can fly underwater. "
-        "Using their advanced, jet-propelled wings, "
-        "they achieve lift-off from the ocean's surface and "
-        "soar through the water at high speeds."
-    ]
-}
+xls = pd.ExcelFile('/content/esportazione TEST 1 15 aprile.xlsx')
+xls.sheet_names
 
-df = pd.DataFrame(data)
+df = pd.read_excel('/content/esportazione TEST 1 15 aprile.xlsx', header = 1,
+                  index_col = 'Data ora',
+                  sheet_name= 'Sheet1')
+
+df_nodes =  pd.read_excel('/content/esportazione TEST 1 15 aprile.xlsx',
+                         header = None,
+                         names = ['Nodi'],
+                         sheet_name= 'Nodi')
+
+df.index = pd.to_datetime(df.index, format='%d/%m/%Y %H:%M:%S', dayfirst = True)
+
+df.head()
+
 
 st.write(df)
 
