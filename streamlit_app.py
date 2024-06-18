@@ -4,8 +4,7 @@ import pandas as pd
 st.balloons()
 st.markdown("# EduGoal ChatBot Evaluation Analysis")
 
-st.write("Nella seguente pagina sono contenute analisi esplorative riguardanti le performance
-del chatbot di EducationGoal Campania." )
+st.write("Nella seguente pagina sono contenute analisi esplorative riguardanti le performance del chatbot di EducationGoal Campania." )
 
 st.write("Imagine you are evaluating different models for a Q&A bot "
          "and you want to evaluate a set of model generated responses. "
