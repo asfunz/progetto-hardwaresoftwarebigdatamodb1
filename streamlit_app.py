@@ -2,11 +2,10 @@ import streamlit as st
 import pandas as pd
 
 st.balloons()
-st.markdown("# FUCK")
+st.markdown("# EduGoal ChatBot Evaluation Analysis")
 
-st.write("We are so glad to see you here. ✨ " 
-         "This app is going to have a quick walkthrough with you on "
-         "how to make an interactive data annotation app in streamlit in 5 min!")
+st.write("Nella seguente pagina sono contenute analisi esplorative riguardanti le performance
+del chatbot di EducationGoal Campania." )
 
 st.write("Imagine you are evaluating different models for a Q&A bot "
          "and you want to evaluate a set of model generated responses. "
